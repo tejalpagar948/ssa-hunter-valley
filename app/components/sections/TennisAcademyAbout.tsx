@@ -226,7 +226,7 @@ export default function TennisAcademyAbout() {
 
   return (
     <section
-      className="relative !py-10 overflow-hidden bg-white font-sans"
+      className="relative lg:!pt-10 overflow-hidden bg-white font-sans"
       id="tennisAcademyAbout">
       <div className="absolute hidden lg:inline-block">
         <Image
@@ -240,7 +240,7 @@ export default function TennisAcademyAbout() {
       </div>
       <div className="wrapper py-5 flex flex-col lg:flex-row lg:items-start">
         <div className="max-w-[686px] mx-auto">
-          <div className="relative z-10 text-center py-10 px-4 sm:px-6 lg:px-0">
+          <div className="relative z-10 text-center py-10 pt-0 lg:pt-10  px-4 sm:px-6 lg:px-0">
             <p className="text-[clamp(18px,2.2vw,24px)] font-normal text-gray-800 leading-[1.1] max-w-3xl mx-auto tracking-tight">
               {ACADEMY_CONFIG.tagline.text}{' '}
               <span className="text-[#8eb421] font-bold">

@@ -195,7 +195,7 @@ export default function Facilities({
   return (
     <section className="w-full bg-white overflow-x-hidden !pt-10 !py-0 lg:!py-24">
       <div className="flex flex-col lg:gap-25">
-        <div className="wrapper !px-0 px-8 sm:px-12 lg:px-16 lg:pt-10 lg:pb-8 text-center lg:text-left">
+        <div className="wrapper !px-0 px-8 sm:px-12 lg:px-16 lg:pb-12 text-center lg:text-left">
           <SectionHeading
             title="Facilities"
             description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s'"
