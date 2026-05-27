@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="flex-shrink-0 flex justify-center lg:justify-start items-center lg:items-center mb-8 lg:mb-0">
           <div className="p-3 sm:p-4 w-[110px] sm:w-[130px] h-[80px] sm:h-[90px] flex items-center justify-center">
             <Image
-              src="/assets/images/ssa-logo.png"
+              src="/assets/images/logo.png"
               alt="SSA Logo"
               width={100}
               height={60}
