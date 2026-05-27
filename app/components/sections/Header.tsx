@@ -8,7 +8,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
         <Link href="./">
           <Image
-            src="/assets/images/logo.png"
+            src="/assets/logo/logo.png"
             alt="SSA Logo"
             width={80}
             height={80}
