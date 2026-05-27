@@ -3,13 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterNav from '../elements/FooterNav';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 type NavColumn = {
   links: { label: string; href: string }[];
 };
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const navColumns: NavColumn[] = [
   {
@@ -94,14 +90,10 @@ const socialLinks = [
   },
 ];
 
-// ─── Main Footer ──────────────────────────────────────────────────────────────
-
 export default function Footer() {
   return (
     <footer className="w-full bg-white">
-      {/* ── Top section ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-8 lg:!pt-20 sm:pt-10 pb-8 lg:!pb-15 flex flex-col lg:flex-row gap-0 lg:gap-30">
-        {/* Left: Logo */}
         <div className="flex-shrink-0 flex justify-center lg:justify-start items-center lg:items-center mb-8 lg:mb-0">
           <div className="p-3 sm:p-4 w-[110px] sm:w-[130px] h-[80px] sm:h-[90px] flex items-center justify-center">
             <Image
@@ -116,18 +108,14 @@ export default function Footer() {
 
         <div className="w-full">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-6">
-            {/* Right: Nav columns */}
             <div className="flex-1">
               <FooterNav />
             </div>
           </div>
 
-          {/* Divider */}
           <div className="w-full h-[1.5px] bg-gray-200 my-6 sm:my-8" />
 
-          {/* Bottom info row */}
           <div className="flex flex-col md:flex-row gap-8 justify-between">
-            {/* Left: address + contact */}
             <div className="flex flex-col gap-2 text-center md:text-left md:w-1/2">
               <Link
                 href="/about"
@@ -177,7 +165,6 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Right: Social */}
             <div className="flex flex-col items-left text-center md:text-left md:items-left gap-3 md:w-1/2">
               <p className="text-[1rem] font-bold text-[#9ab825]">
                 Connect with us
@@ -201,7 +188,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="w-full bg-[#1a2e3b] py-4 sm:py-3 px-4 sm:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-2 text-center sm:text-left">
           <Link

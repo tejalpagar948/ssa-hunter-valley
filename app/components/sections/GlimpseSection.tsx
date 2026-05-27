@@ -11,12 +11,10 @@ export default function GlimpseSection() {
       onCtaClick={() => console.log('Register clicked')}
       images={[
         {
-          // Portrait — left column (narrower)
           src: '/assets/images/Glimpse-1.png',
           alt: 'Tennis player mid-serve on clay court',
         },
         {
-          // Landscape — right column (wider)
           src: '/assets/images/Glimpse-2.png',
           alt: 'Aerial view of tennis complex with multiple courts',
         },

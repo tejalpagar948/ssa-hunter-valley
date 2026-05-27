@@ -1,8 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 type BannerCard = {
   id: number;
@@ -11,11 +8,9 @@ type BannerCard = {
   href: string;
   image: string;
   imageAlt: string;
-  sideImage?: string; // optional separate image for the side box
+  sideImage?: string;
   theme: 'dark' | 'lime';
 };
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const cards: BannerCard[] = [
   {
@@ -41,8 +36,6 @@ const cards: BannerCard[] = [
   },
 ];
 
-// ─── Arrow Icon ───────────────────────────────────────────────────────────────
-
 function ArrowRight() {
   return (
     <svg
@@ -62,14 +55,11 @@ function ArrowRight() {
   );
 }
 
-// ─── Banner Card ──────────────────────────────────────────────────────────────
-
 function BannerCard({ card }: { card: BannerCard }) {
   const isLime = card.theme === 'lime';
 
   return (
     <div className="relative flex-1 min-h-[200px] sm:min-h-[220px] overflow-hidden group">
-      {/* ── Dark card: full background photo ── */}
       {!isLime && (
         <Image
           src={card.image}
@@ -81,7 +71,6 @@ function BannerCard({ card }: { card: BannerCard }) {
         />
       )}
 
-      {/* ── Colour overlay ── */}
       <div
         className="absolute inset-0"
         style={{
@@ -89,12 +78,10 @@ function BannerCard({ card }: { card: BannerCard }) {
         }}
       />
 
-      {/* ── Lime card: yellow-bordered box with side image ── */}
       {isLime && (
         <div
           className="absolute right-6 top-4 bottom-4 w-[38%] pointer-events-none"
           aria-hidden="true">
-          {/* actual image */}
           <div className="absolute inset-0 overflow-hidden rounded-sm">
             <Image
               src={card.sideImage ?? card.image}
@@ -107,9 +94,7 @@ function BannerCard({ card }: { card: BannerCard }) {
         </div>
       )}
 
-      {/* ── Content ── */}
       <div className="relative z-10 flex flex-col justify-between h-full px-8 sm:px-18 py-7 sm:py-16">
-        {/* Title + description */}
         <div className="flex flex-col gap-3">
           <h2 className="text-white text-[1.55rem] sm:text-[1.75rem] font-extrabold leading-tight inline-flex items-start gap-1">
             {card.title}
@@ -123,7 +108,6 @@ function BannerCard({ card }: { card: BannerCard }) {
           </p>
         </div>
 
-        {/* Read More */}
         <Link
           href={card.href}
           className="inline-flex items-center gap-3 text-white text-[0.8rem] font-semibold mt-6 hover:gap-5 transition-all duration-300">
@@ -134,8 +118,6 @@ function BannerCard({ card }: { card: BannerCard }) {
     </div>
   );
 }
-
-// ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function CoachesEvents({
   cards: items = cards,

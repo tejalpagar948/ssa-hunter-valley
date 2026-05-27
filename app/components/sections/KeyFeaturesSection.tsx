@@ -4,7 +4,6 @@ import Image from 'next/image';
 import SectionHeading from '../elements/SectionHeading';
 import Button from '../common/Button';
 
-// ─── Interfaces ──────────────────────────────────────────────────────────────
 interface FeatureItem {
   id: string;
   text: string;
@@ -14,7 +13,6 @@ interface FeatureColumnProps {
   items: FeatureItem[];
 }
 
-// ─── Data ────────────────────────────────────────────────────────────────────
 const FEATURES: FeatureItem[] = [
   { id: 'c1-1', text: 'First venue in the world' },
   {
@@ -36,7 +34,6 @@ const FEATURES: FeatureItem[] = [
   { id: 'c1-6', text: 'First one stop tennis academy in Asia Pacific' },
 ];
 
-// ─── Reusable Column Component ───────────────────────────────────────────────
 function FeatureColumn({ items }: FeatureColumnProps) {
   return (
     <div className="flex flex-col gap-6 lg:gap-8">
@@ -59,11 +56,9 @@ function FeatureColumn({ items }: FeatureColumnProps) {
   );
 }
 
-// ─── Main Component ──────────────────────────────────────────────────────────
 export default function KeyFeaturesSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-white px-6 sm:px-12 md:px-20 lg:px-24 flex items-center justify-center">
-      {/* Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
         <div className="absolute inset-0 flex justify-between px-[10%] opacity-[0.06]">
           <div className="w-[1.5px] h-full bg-slate-900" />
@@ -123,9 +118,7 @@ export default function KeyFeaturesSection() {
         </svg>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-center">
-        {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 mb-2">
           <SectionHeading
             title="key Features"
@@ -139,7 +132,6 @@ export default function KeyFeaturesSection() {
           </div>
         </div>
 
-        {/* Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 lg:gap-y-0 pt-4">
           <FeatureColumn items={FEATURES} />
 

@@ -3,17 +3,13 @@ import Image from 'next/image';
 import SectionHeading from '../elements/SectionHeading';
 import Button from '../common/Button';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 type Professional = {
   id: number;
   name: string;
   role: string;
-  image: string; // path relative to /public
+  image: string;
   imageAlt: string;
 };
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const professionals: Professional[] = [
   {
@@ -40,8 +36,6 @@ const professionals: Professional[] = [
   },
 ];
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
 interface ProfessionalCardProps {
   professional: Professional;
 }
@@ -61,7 +55,6 @@ function ProfessionalCard({ professional }: ProfessionalCardProps) {
         />
       </div>
 
-      {/* Info */}
       <div className="flex flex-col gap-1">
         <h3 className="text-[1.05rem] font-bold text-gray-900 leading-snug">
           {professional.name}
@@ -74,14 +67,9 @@ function ProfessionalCard({ professional }: ProfessionalCardProps) {
   );
 }
 
-// ─── Main component ───────────────────────────────────────────────────────────
-
 interface MeetOurProfessionalsProps {
-  /** Override the professionals list, e.g. from an API */
   items?: Professional[];
-  /** Override the description copy */
   description?: string;
-  /** Callback when "View All" is clicked */
   onViewAll?: () => void;
 }
 
@@ -92,7 +80,6 @@ export default function MeetOurProfessionals({
 }: MeetOurProfessionalsProps) {
   return (
     <section className="w-full bg-white">
-      {/* ── Header row ─────────────────────────────────────────────────────── */}
       <div className="wrapper">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 mb-2">
           <SectionHeading
@@ -109,7 +96,6 @@ export default function MeetOurProfessionals({
           </div>
         </div>
 
-        {/* ── Cards grid ─────────────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {items.map((professional) => (
             <ProfessionalCard

@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { X, Activity } from 'lucide-react';
 import RegistrationForm from './RegistrationForm';
 

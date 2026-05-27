@@ -6,7 +6,6 @@ export default function Header() {
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
-        {/* Logo */}
         <Link href="./">
           <Image
             src="/assets/images/ssa-logo.png"
@@ -18,7 +17,6 @@ export default function Header() {
           />
         </Link>
 
-        {/* Button */}
         <Button variant="primary" className="self-start text-xl !mx-0">
           Contact Us
         </Button>

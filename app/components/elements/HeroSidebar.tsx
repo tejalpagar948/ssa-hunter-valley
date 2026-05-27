@@ -3,10 +3,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { Trophy, CloudSun, Swords, Medal } from 'lucide-react';
 
-// ==========================================
-// TYPES
-// ==========================================
-
 interface MatchScore {
   id: string;
   court: string;
@@ -39,10 +35,6 @@ interface HeroSidebarProps {
   scores: TournamentResult[];
 }
 
-// ==========================================
-// CONSTANTS
-// ==========================================
-
 const TABS: ReadonlyArray<{
   id: TabType;
   label: string;
@@ -68,10 +60,6 @@ const TABS: ReadonlyArray<{
     icon: <Medal className="w-4 h-4" />,
   },
 ];
-
-// ==========================================
-// INLINE ICONS (UNCHANGED)
-// ==========================================
 
 const ChevronDoubleLeft = () => (
   <svg
@@ -106,10 +94,6 @@ const PinIcon = () => (
     />
   </svg>
 );
-
-// ==========================================
-// PANELS
-// ==========================================
 
 const WeatherPanel = ({
   weather,
@@ -214,10 +198,6 @@ const ScorePanel = ({ scores }: { scores: TournamentResult[] }) => (
     ))}
   </div>
 );
-
-// ==========================================
-// MAIN COMPONENT
-// ==========================================
 
 export default function HeroSidebar({
   activeTab,

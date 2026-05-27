@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import SectionHeading from '../elements/SectionHeading';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 type TagColor = 'green' | 'blue' | 'yellow' | 'teal';
 type Tag = { label: string; color: TagColor; bgColor?: string };
 type Facility = {
@@ -14,8 +12,6 @@ type Facility = {
   imageAlt: string;
   tags: Tag[];
 };
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const facilities: Facility[] = [
   {
@@ -73,8 +69,6 @@ const tagStyles: Record<TagColor, string> = {
   teal: 'bg-[#3a8a7a] text-white',
 };
 
-// ─── Play Button ──────────────────────────────────────────────────────────────
-
 function PlayButton() {
   return (
     <div
@@ -88,8 +82,6 @@ function PlayButton() {
     </div>
   );
 }
-
-// ─── Facility Card ────────────────────────────────────────────────────────────
 
 function FacilityCard({
   facility,
@@ -114,7 +106,6 @@ function FacilityCard({
         <PlayButton />
       </div>
 
-      {/* Title */}
       <h3
         className={`text-[1.25rem] font-bold leading-tight ${
           darkText ? 'text-gray-900' : 'text-white'
@@ -122,7 +113,6 @@ function FacilityCard({
         {facility.title}
       </h3>
 
-      {/* Tags */}
       <div className="flex flex-wrap gap-2">
         {facility.tags.map((tag) => (
           <span
@@ -140,7 +130,6 @@ function FacilityCard({
         ))}
       </div>
 
-      {/* Description */}
       <p
         className={`text-[0.82rem] leading-relaxed ${
           darkText ? 'text-gray-500' : 'text-white/75'
@@ -150,8 +139,6 @@ function FacilityCard({
     </article>
   );
 }
-
-// ─── Trophy Watermark ─────────────────────────────────────────────────────────
 
 function TrophyWatermark() {
   return (
@@ -198,8 +185,6 @@ const bandStyle = {
     'linear-gradient(135deg, #0d2b45 0%, #0f3040 20%, #123830 55%, #1a5028 80%, #276624 100%)',
 };
 
-// ─── Main Component ───────────────────────────────────────────────────────────
-
 export default function Facilities({
   items = facilities,
   description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
@@ -210,15 +195,12 @@ export default function Facilities({
   return (
     <section className="w-full bg-white overflow-x-hidden !pt-10 !py-0 lg:!py-24">
       <div className="flex flex-col lg:gap-25">
-        {/* Header */}
         <div className="wrapper !px-0 px-8 sm:px-12 lg:px-16 lg:pt-10 lg:pb-8 text-center lg:text-left">
           <SectionHeading
             title="Facilities"
             description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s'"
           />
         </div>
-
-        {/* ── Mobile & tablet (< lg): simple stacked grid ── */}
         <div className="lg:hidden w-full py-8 px-6 sm:px-10" style={bandStyle}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {items.map((facility, i) => (
@@ -232,7 +214,6 @@ export default function Facilities({
           </div>
         </div>
 
-        {/* ── Desktop (lg+): original absolute diagonal layout ── */}
         <div className="hidden lg:block h-[500px]">
           <div className="relative">
             <div
@@ -242,7 +223,6 @@ export default function Facilities({
             <TrophyWatermark />
             <div className="relative z-10 h-[300px] wrapper">
               <div className="hidden lg:block">
-                {/* Row 1 — top-LEFT */}
                 <div className="grid grid-cols-4 gap-8 mb-12 absolute -translate-y-1/2 top-1/5">
                   <div className="col-span-1">
                     <FacilityCard
@@ -256,7 +236,6 @@ export default function Facilities({
                   </div>
                   <div className="col-span-2" />
                 </div>
-                {/* Row 2 — bottom-RIGHT */}
                 <div className="grid grid-cols-4 gap-8 absolute translate-y-1/2 -bottom-1/5">
                   <div className="col-span-2" />
                   <div className="col-span-1">

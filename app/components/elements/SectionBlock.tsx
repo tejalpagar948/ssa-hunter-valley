@@ -3,10 +3,6 @@ import Image from 'next/image';
 import SectionHeading from './SectionHeading';
 import Button from '../common/Button';
 
-// ─────────────────────────────────────────────
-// TYPES
-// ─────────────────────────────────────────────
-
 export interface SplitImage {
   src: string;
   alt: string;
@@ -64,10 +60,6 @@ function SectionHeader({
   );
 }
 
-// ─────────────────────────────────────────────
-// SPLIT GALLERY
-// ─────────────────────────────────────────────
-
 interface SplitGalleryProps {
   images: readonly [SplitImage, SplitImage];
 }
@@ -97,10 +89,6 @@ function ImageCard({ image }: { image: SplitImage }) {
     </div>
   );
 }
-
-// ─────────────────────────────────────────────
-// PROGRAM CARDS
-// ─────────────────────────────────────────────
 
 interface ProgramCardsProps {
   programs: readonly ProgramCard[];
@@ -139,10 +127,6 @@ function ProgramCardItem({ program }: { program: ProgramCard }) {
     </div>
   );
 }
-
-// ─────────────────────────────────────────────
-// MAIN COMPONENT
-// ─────────────────────────────────────────────
 
 export default function SectionBlock(props: SectionBlockProps) {
   const { title, subtitle, ctaLabel, onCtaClick } = props;

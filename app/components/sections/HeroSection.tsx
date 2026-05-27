@@ -7,8 +7,6 @@ import HeroSidebar from '@/components/elements/HeroSidebar';
 import { Check } from 'lucide-react';
 import heroBanner from '../../../public/assets/images/hero-banner.gif';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
 interface RegistrationForm {
   fullName: string;
   email: string;
@@ -37,8 +35,6 @@ interface TournamentResult {
 }
 
 type TabType = 'weather' | 'matches' | 'score' | null;
-
-// ── Constants ─────────────────────────────────────────────────────────────────
 
 const INITIAL_FORM: RegistrationForm = {
   fullName: '',
@@ -110,8 +106,6 @@ const TIME_FORMAT: Intl.DateTimeFormatOptions = {
   hour12: true,
 };
 
-// ── API (simulated — swap body for real fetch when endpoint is ready) ─────────
-
 async function submitRegistration(
   data: RegistrationForm
 ): Promise<{ success: boolean; leadId?: string; error?: string }> {
@@ -146,8 +140,6 @@ async function submitRegistration(
   });
 }
 
-// ── Root component ────────────────────────────────────────────────────────────
-
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState<TabType>('weather');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -157,7 +149,6 @@ export default function HeroSection() {
   const [formData, setFormData] = useState<RegistrationForm>(INITIAL_FORM);
   const [currentTime, setCurrentTime] = useState(MOCK_WEATHER.time);
 
-  // Live clock — updates every minute
   useEffect(() => {
     const tick = () =>
       setCurrentTime(new Date().toLocaleDateString('en-US', TIME_FORMAT));
@@ -212,7 +203,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen w-full overflow-x-hidden bg-slate-950 font-sans border-1 border-gray-100 text-white flex flex-col justify-between">
-      {/* Background — GIF + gradient overlays */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroBanner}
@@ -227,7 +217,6 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.15),transparent_60%)]" />
       </div>
 
-      {/* Main content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-[90vw] flex-col items-center justify-center py-[6vw]">
         <div className="flex flex-col items-center text-center xl:max-w-3xl flex-grow justify-center py-12 pb-30">
           <div className="mb-2">
@@ -245,7 +234,6 @@ export default function HeroSection() {
             </span>
           </h2>
 
-          {/* Glowing green ribbon */}
           <div className="relative w-full max-w-[650px] py-1 px-8 mb-10 overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(180,220,80,0)_0%,rgba(180,220,80,0.18)_20%,rgba(220,255,120,0.25)_50%,rgba(180,220,80,0.18)_80%,rgba(180,220,80,0)_100%)]" />
             <div className="absolute inset-0 border-y border-white/10" />
@@ -264,7 +252,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Sidebar */}
       <HeroSidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -274,7 +261,6 @@ export default function HeroSection() {
         scores={MOCK_SCORES}
       />
 
-      {/* Scroll indicator */}
       <div
         role="button"
         aria-label="Scroll to next section"
@@ -300,7 +286,6 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Registration modal */}
       <RegistrationModal
         isOpen={isModalOpen}
         onClose={handleModalClose}
